@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shelter</title>
+  <title>Slider</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,7 +23,7 @@
                     <h3>Хаяо Миядзаки</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-1.jpg" alt="">
+                <img src="../slider/img/movie-1.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -34,7 +34,7 @@
                     <h3>Джон Маскер</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-2.jpg" alt="">
+                <img src="../slider/img/movie-2.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -45,7 +45,7 @@
                     <h3>Алекс Йи</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-3.jpg" alt="">
+                <img src="../slider/img/movie-3.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -56,7 +56,7 @@
                     <h3>Шухэй Ябута</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-4.jpg" alt="">
+                <img src="../slider/img/movie-4.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -67,7 +67,7 @@
                     <h3>Тэцуро Араки</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-5.jpg" alt="">
+                <img src="../slider/img/movie-5.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -78,7 +78,7 @@
                     <h3>Такуя Игараси</h3> 
                     <button class="btn">Подробнее</button>
                 </div>           
-                <img src="../img/movie-6.jpg" alt="">
+                <img src="../slider/img/movie-6.jpg" alt="">
                 <a class="next" onclick="nextSlide()">&#10095;</a>
             </div>
 
@@ -94,5 +94,42 @@
     <footer>
 
     </footer>
+
+
+
+    <script>
+        let slideIndex = 1;
+
+        showSlides(slideIndex);
+
+        function nextSlide() {
+           showSlides(slideIndex += 1);
+        }
+
+        function previousSlide() {
+           showSlides(slideIndex -= 1);  
+        }
+
+        
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("one-slide");
+            if (n > slides.length) {
+               slideIndex = 1
+            }
+            if (n < 1) {
+               slideIndex = slides.length
+            }
+
+            for (let slide of slides) {
+               slide.style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "flex";    
+        
+        }
+
+    </script>
+
+
+
 </body>
 </html>
