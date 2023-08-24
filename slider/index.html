@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <h1>Some stuff from my pinterest</h1>
+        <!--https://dzen.ru/a/YKKkxZiA82e6HG6Y-->
+    </header>
+
+
+    <main>
+        <div class="slider">
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Ходячий замок</h2>
+                    <h3>Хаяо Миядзаки</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-1.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Планета сокровищ</h2>
+                    <h3>Джон Маскер</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-2.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Аркейн</h2>
+                    <h3>Алекс Йи</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-3.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Сага о Винланде</h2>
+                    <h3>Шухэй Ябута</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-4.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Атака титанов</h2>
+                    <h3>Тэцуро Араки</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-5.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="one-slide">
+                <a class="previous" onclick="previousSlide()">&#10094;</a>
+                <div class="one-slide-column">
+                    <h2>Проза бродячих псов</h2>
+                    <h3>Такуя Игараси</h3> 
+                    <button class="btn">Подробнее</button>
+                </div>           
+                <img src="../slider/img/movie-6.jpg" alt="">
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+
+            <div class="arrow_mobile">
+                <a class="previous_mobile" onclick="previousSlide()">&#10094;</a>
+                <a class="next_mobile" onclick="nextSlide()">&#10095;</a>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+
+
+
+    <script>
+        let slideIndex = 1;
+
+        showSlides(slideIndex);
+
+        function nextSlide() {
+           showSlides(slideIndex += 1);
+        }
+
+        function previousSlide() {
+           showSlides(slideIndex -= 1);  
+        }
+
+        
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("one-slide");
+            if (n > slides.length) {
+               slideIndex = 1
+            }
+            if (n < 1) {
+               slideIndex = slides.length
+            }
+
+            for (let slide of slides) {
+               slide.style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "flex";    
+        
+        }
+
+    </script>
+
+
+
+</body>
+</html>
